@@ -1,12 +1,25 @@
+// External Dependencies
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+// Internal Dependencies
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// Local Variables
+const theme = createTheme(createTheme(), {
+  palette: {
+    background: '#111',
+  },
+});
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ThemeProvider theme={theme}>
+      <App />
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
